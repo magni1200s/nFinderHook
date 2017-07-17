@@ -26,5 +26,5 @@ nFinderHookは以下のモジュールで構成されます。
 なお利用しているサードパーティ製のライブラリの都合で32ビット版のnFinder.exeでしか利用できません。nFinderに同梱されているx64x86Conv.exeで64ビット化している場合はx64x86Conv.exeを使用して32ビットに戻してからお使いください。
 
 
-このソフトウェアはDLLインジェクションのためにマイクロソフト社のDetours( https://www.microsoft.com/en-us/research/project/detours/ )を利用しています。ソースコードからビルドする際に同ライブラリ及びヘッダーファイルが必要となります。
-また合わせてMalware Analyst's Cookbook( http://www.malwarecookbook.com/ )のサンプルコードも参考にさせていただきました。
+このソフトウェアはDLLインジェクションのためにマイクロソフト社の[Detours](https://www.microsoft.com/en-us/research/project/detours/)を利用しています。ソースコードからビルドする際に同ライブラリ及びヘッダーファイルが必要となります。
+また合わせて[Malware Analyst's Cookbook](http://www.malwarecookbook.com/)のサンプルコードも参考にさせていただきました。
