@@ -139,7 +139,10 @@ int WINAPI mysend(SOCKET s, const char* buf, int len, int flags) {
 //
 int WINAPI myHttpSendRequestW(HINTERNET hRequest, LPCTSTR lpszHeaders, DWORD dwHeadersLength, LPVOID lpOptional, DWORD dwOptionalLength)
 {
-	if (dwOptionalLength > 0)
+	// Request body size is normally less than 100 bytes (usually 74 bytes), but do nothing if buffer size exceeds 8KB for safety
+	// Also, there is no way to know request method is POST or not at this point. 
+	// So if request body is exist (dwOptionalLength is larger than 0), this rquest is supposed to POST request.
+	if (dwOptionalLength > 0 && dwOptionalLength < BUFFSIZE)
 	{
 		char buf[BUFFSIZE];
 
