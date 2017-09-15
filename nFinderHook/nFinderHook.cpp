@@ -89,7 +89,8 @@ int WINAPI mysend(SOCKET s, const char* buf, int len, int flags) {
 	{
 		const char *p1 = NULL;
 
-		if (((p1 = strstr(buf, "GET /watch/sm")) != NULL) || ((p1 = strstr(buf, "GET http://www.nicovideo.jp/watch/sm")) != NULL))
+		// Video ID is now "sm" with 8-digit number e.g. "sm12345678" or 10-digit number e.g. "1234567890". Need to support both types.
+		if (((p1 = strstr(buf, "GET /watch/")) != NULL) || ((p1 = strstr(buf, "GET http://www.nicovideo.jp/watch/")) != NULL))
 		{
 			char buf2[BUFFSIZE];
 			int len2 = 0;
